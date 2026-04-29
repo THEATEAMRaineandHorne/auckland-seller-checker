@@ -1,5 +1,16 @@
 const questions = [
   {
+    text: "What best describes your situation?",
+    options: [
+      { label: "Thinking of selling soon", score: 0 },
+      { label: "Preparing to list", score: 0 },
+      { label: "Already listed but not getting enough enquiry", score: 3 },
+      { label: "Getting enquiry but no offers", score: 3 },
+      { label: "Getting low offers", score: 2 }
+    ],
+    categories: ["price", "marketing"]
+  },
+  {
     text: "How long has the property been on the market?",
     options: [
       { label: "Not listed yet", score: 0 },
@@ -13,66 +24,66 @@ const questions = [
   {
     text: "How many serious buyer enquiries have you had?",
     options: [
+      { label: "Not listed yet / no enquiry yet", score: 0 },
       { label: "Strong enquiry", score: 0 },
       { label: "Some enquiry", score: 1 },
       { label: "Very little enquiry", score: 3 },
-      { label: "Almost none", score: 4 },
-      { label: "Not listed yet", score: 0 }
+      { label: "Almost none", score: 4 }
     ],
     categories: ["marketing"]
   },
   {
     text: "How many buyers have physically viewed the property?",
     options: [
+      { label: "Not listed yet / no viewings yet", score: 0 },
       { label: "Many", score: 0 },
       { label: "A reasonable number", score: 1 },
       { label: "Very few", score: 3 },
-      { label: "Almost none", score: 4 },
-      { label: "Not listed yet", score: 0 }
+      { label: "Almost none", score: 4 }
     ],
     categories: ["marketing"]
   },
   {
     text: "Have you received any written offers?",
     options: [
-      { label: "Yes, strong offer", score: 0 },
+      { label: "Not listed yet / no offers expected yet", score: 0 },
+      { label: "Yes, a strong offer", score: 0 },
       { label: "Yes, but lower than expected", score: 2 },
       { label: "Verbal interest only", score: 3 },
-      { label: "No offers", score: 4 },
-      { label: "Not listed yet", score: 0 }
+      { label: "No offers", score: 4 }
     ],
     categories: ["price"]
   },
   {
     text: "What feedback are buyers giving?",
     options: [
+      { label: "Not listed yet / no buyer feedback yet", score: 0 },
       { label: "Mostly positive", score: 0 },
       { label: "Price concerns", score: 3 },
       { label: "Condition concerns", score: 3 },
-      { label: "Location or layout concerns", score: 2 },
-      { label: "We are not getting clear feedback", score: 4 }
+      { label: "Location or layout concerns", score: 2 }
     ],
     categories: ["price", "presentation", "confidence"]
   },
   {
-    text: "How does your price compare with similar recent sales?",
+    text: "How does your expected price compare with similar recent sales?",
     options: [
-      { label: "Clearly supported by sales", score: 0 },
+      { label: "Clearly supported by recent sales", score: 0 },
       { label: "Slightly above recent sales", score: 2 },
       { label: "Well above recent sales", score: 4 },
-      { label: "Not sure", score: 3 },
-      { label: "Mainly relying on online estimates or GV", score: 3 }
+      { label: "Not sure yet", score: 2 },
+      { label: "Mainly relying on online estimates or CV/GV", score: 3 }
     ],
     categories: ["price"]
   },
   {
-    text: "How does your property present online?",
+    text: "How does your property present online or in photos?",
     options: [
+      { label: "Not listed yet, but presentation is strong", score: 0 },
       { label: "Professional photos, video, floor plan and strong copy", score: 0 },
       { label: "Good photos but no video or floor plan", score: 1 },
-      { label: "Average photos", score: 2 },
-      { label: "Poor photos", score: 4 },
-      { label: "Not sure", score: 3 }
+      { label: "Average photos or needs improvement", score: 2 },
+      { label: "Poor photos / not ready yet", score: 4 }
     ],
     categories: ["presentation", "marketing"]
   },
@@ -83,18 +94,18 @@ const questions = [
       { label: "Minor issues", score: 1 },
       { label: "Some concerns", score: 2 },
       { label: "Significant concerns", score: 4 },
-      { label: "Not sure", score: 3 }
+      { label: "Not sure yet", score: 3 }
     ],
     categories: ["confidence"]
   },
   {
-    text: "How much competition is currently nearby?",
+    text: "How much similar competition is currently nearby?",
     options: [
       { label: "Very little similar competition", score: 0 },
       { label: "Some competition", score: 1 },
       { label: "Many similar homes", score: 2 },
       { label: "Cheaper or better-presented homes nearby", score: 4 },
-      { label: "Not sure", score: 3 }
+      { label: "Not checked yet", score: 2 }
     ],
     categories: ["competition"]
   },
@@ -105,31 +116,20 @@ const questions = [
       { label: "Mostly", score: 1 },
       { label: "Some rooms need work", score: 2 },
       { label: "It feels cluttered or tired", score: 4 },
-      { label: "Not sure", score: 3 }
+      { label: "Not sure yet", score: 2 }
     ],
     categories: ["presentation"]
   },
   {
-    text: "Is the marketing reaching buyers outside the standard websites?",
+    text: "Will the marketing reach buyers outside the standard property websites?",
     options: [
-      { label: "Yes, strong digital campaign", score: 0 },
-      { label: "Some social media", score: 1 },
+      { label: "Yes, strong digital campaign planned", score: 0 },
+      { label: "Some social media planned", score: 1 },
       { label: "Mostly property portals only", score: 3 },
-      { label: "Not sure", score: 3 },
-      { label: "No", score: 4 }
+      { label: "Not sure yet", score: 3 },
+      { label: "No clear marketing plan yet", score: 4 }
     ],
     categories: ["marketing"]
-  },
-  {
-    text: "What best describes your situation?",
-    options: [
-      { label: "Thinking of selling", score: 0 },
-      { label: "Listed but not getting enough enquiry", score: 3 },
-      { label: "Getting enquiry but no offers", score: 3 },
-      { label: "Getting low offers", score: 2 },
-      { label: "Need a second opinion before changing strategy", score: 2 }
-    ],
-    categories: ["price", "marketing"]
   }
 ];
 
@@ -226,32 +226,44 @@ function showResult() {
   let title = "";
   let text = "";
 
-  if (total <= 12) {
-    title = "Your property does not appear hard to sell — but small improvements may help.";
-    text = "Based on your answers, your property does not show major warning signs. The next step is to make sure your price, presentation and marketing are aligned with current buyer behaviour in your area.";
-  } else if (total <= 24) {
-    title = "Buyers may be interested, but something is slowing them down.";
-    text = "Your property may not be the problem. The issue may be how buyers are comparing it against other homes currently on the market. A small change in price positioning, presentation or marketing could make a noticeable difference.";
-  } else if (total <= 36) {
+  if (total <= 10) {
+    title = "Your property does not appear hard to sell — but preparation still matters.";
+    text = "Based on your answers, there are no major warning signs at this stage. The best next step is to make sure your price, presentation and marketing are aligned before buyers form their first impression.";
+  } else if (total <= 22) {
+    title = "Buyers may be interested, but something could slow them down.";
+    text = "Your property may not be the problem. The issue may be how buyers compare it with other homes, how it presents, how it is priced, or whether the marketing creates enough confidence and urgency.";
+  } else if (total <= 34) {
     title = "Your property may be at risk of sitting on the market.";
-    text = "Your answers show signs that buyers may be hesitating. This does not always mean the property is overpriced, but it does mean the current strategy may need adjustment.";
+    text = "Your answers show signs that buyers may hesitate. This does not automatically mean the property is overpriced, but it does suggest the selling strategy may need adjustment before momentum is lost.";
   } else {
     title = "Your property likely needs a strategy reset.";
-    text = "When a property has been exposed to the market but buyers are not acting, doing more of the same rarely fixes the issue. A reset may involve new pricing language, improved presentation, stronger buyer targeting or a fresh launch strategy.";
+    text = "When a property has been exposed to the market but buyers are not acting, doing more of the same rarely fixes the issue. A reset may involve new pricing language, stronger presentation, better buyer targeting, improved objection handling or a fresh launch strategy.";
   }
 
   document.getElementById("resultTitle").textContent = title;
   document.getElementById("resultText").textContent = text;
 
-  document.getElementById("priceScore").textContent = scores.price;
-  document.getElementById("presentationScore").textContent = scores.presentation;
-  document.getElementById("confidenceScore").textContent = scores.confidence;
-  document.getElementById("marketingScore").textContent = scores.marketing;
-  document.getElementById("competitionScore").textContent = scores.competition;
+  document.getElementById("priceScore").textContent = getRiskLabel(scores.price);
+  document.getElementById("presentationScore").textContent = getRiskLabel(scores.presentation);
+  document.getElementById("confidenceScore").textContent = getRiskLabel(scores.confidence);
+  document.getElementById("marketingScore").textContent = getRiskLabel(scores.marketing);
+  document.getElementById("competitionScore").textContent = getRiskLabel(scores.competition);
 
   document.querySelector(".checker").classList.add("hidden");
   resultBox.classList.remove("hidden");
   resultBox.scrollIntoView({ behavior: "smooth" });
+}
+
+function getRiskLabel(score) {
+  if (score <= 2) {
+    return "Low";
+  }
+
+  if (score <= 6) {
+    return "Medium";
+  }
+
+  return "High";
 }
 
 renderQuestion();
