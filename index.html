@@ -6,31 +6,132 @@
 
   <title>Why Hasn’t My Auckland House Sold? Free Seller Checker</title>
 
-  <meta name="description" content="Not getting offers on your Auckland property? Use this free seller checker to see whether price, presentation, marketing, buyer confidence or competition may be holding your home back.">
+  <meta name="description" content="Not getting offers on your Auckland property? Use this free Auckland seller checker to see whether price, presentation, marketing, buyer confidence or competition may be holding your home back.">
+
+  <meta name="keywords" content="why hasn't my house sold Auckland, Auckland property not selling, house not getting offers, real estate second opinion Auckland, should I reduce my house price, Auckland seller checker, Titirangi real estate, Blockhouse Bay real estate, Lynfield real estate">
+
+  <meta property="og:title" content="Why Hasn’t Your Auckland Property Sold Yet?" />
+  <meta property="og:description" content="Use this free Auckland seller checker to find out whether price, presentation, marketing, buyer confidence or competition may be holding your property back." />
+  <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Team Peter & Edita | Raine & Horne",
+    "description": "Local Auckland real estate specialists helping homeowners in Titirangi, Blockhouse Bay, Lynfield and surrounding suburbs with selling strategy, pricing, marketing and buyer feedback.",
+    "url": "https://www.raineandhorne.co.nz/blockhousebay",
+    "telephone": "+6421765234",
+    "email": "edita.andrijasevic@blockhousebay.rh.co.nz",
+    "areaServed": [
+      "Titirangi",
+      "Blockhouse Bay",
+      "Lynfield",
+      "New Lynn",
+      "Green Bay",
+      "Mount Roskill",
+      "New Windsor",
+      "Avondale",
+      "Glen Eden",
+      "Auckland"
+    ],
+    "brand": {
+      "@type": "Brand",
+      "name": "Raine & Horne"
+    }
+  }
+  </script>
 </head>
 
 <body>
   <main class="page">
+
+    <header class="topBar">
+      <div class="logoText">
+        <span class="logoSmall">Team Peter & Edita</span>
+        <strong>Raine & Horne</strong>
+      </div>
+
+      <a class="headerLink" href="mailto:edita.andrijasevic@blockhousebay.rh.co.nz?subject=Seller%20Strategy%20Review%20Request">
+        Request Review
+      </a>
+    </header>
+
     <section class="hero">
-      <p class="eyebrow">Free Auckland Seller Checker</p>
+      <div class="heroGrid">
+        <div class="heroContent">
+          <p class="eyebrow">Free Auckland Seller Diagnostic</p>
 
-      <h1>Why Hasn’t Your Auckland Property Sold Yet?</h1>
+          <h1>Why Hasn’t Your Auckland Property Sold Yet?</h1>
 
-      <p class="intro">
-        Answer 12 quick questions and discover whether your property may have a
-        price, presentation, marketing, buyer confidence or competition problem.
-      </p>
+          <p class="intro">
+            Answer a few quick questions and discover whether your property may have a
+            price, presentation, marketing, buyer confidence or competition problem.
+          </p>
 
-      <p class="trust">
-        Created for Auckland homeowners who want a practical second opinion before reducing their price.
-      </p>
+          <p class="trust">
+            Built for Auckland homeowners who want a practical second opinion before reducing their price
+            or launching their property to market.
+          </p>
+
+          <div class="heroActions">
+            <a class="primaryBtn ctaBtn" href="#seller-checker">Start Free Seller Check</a>
+            <a class="secondaryBtn ctaBtn" href="mailto:edita.andrijasevic@blockhousebay.rh.co.nz?subject=Seller%20Strategy%20Review%20Request">
+              Ask for Second Opinion
+            </a>
+          </div>
+        </div>
+
+        <aside class="heroCard">
+          <p class="cardLabel">This check helps identify</p>
+
+          <ul class="heroList">
+            <li>Price positioning issues</li>
+            <li>Presentation concerns</li>
+            <li>Buyer confidence problems</li>
+            <li>Marketing reach gaps</li>
+            <li>Nearby competition pressure</li>
+          </ul>
+
+          <div class="miniProof">
+            <strong>Local focus</strong>
+            <span>Titirangi • Blockhouse Bay • Lynfield • West Auckland</span>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <section class="checker">
+    <section class="featureStrip">
+      <div>
+        <strong>Fast</strong>
+        <span>Only a few questions</span>
+      </div>
+
+      <div>
+        <strong>Practical</strong>
+        <span>No generic online estimate</span>
+      </div>
+
+      <div>
+        <strong>Local</strong>
+        <span>Auckland seller-focused</span>
+      </div>
+    </section>
+
+    <section id="seller-checker" class="checker">
+      <div class="sectionIntro">
+        <p class="eyebrow">Start Here</p>
+        <h2>Get your seller risk result</h2>
+        <p>
+          Choose the answer that best matches your situation. The questions will adjust depending on
+          whether you are already listed or still preparing to sell.
+        </p>
+      </div>
+
       <div class="progress">
-        <span id="progressText">Question 1 of 12</span>
+        <span id="progressText">Question 1</span>
         <div class="progressBar">
           <div id="progressFill"></div>
         </div>
@@ -46,6 +147,7 @@
 
     <section id="resultBox" class="resultBox hidden">
       <p class="eyebrow">Your Seller Result</p>
+
       <h2 id="resultTitle"></h2>
       <p id="resultText"></p>
 
@@ -54,18 +156,22 @@
           <strong>Price Positioning</strong>
           <span id="priceScore"></span>
         </div>
+
         <div>
           <strong>Presentation</strong>
           <span id="presentationScore"></span>
         </div>
+
         <div>
           <strong>Buyer Confidence</strong>
           <span id="confidenceScore"></span>
         </div>
+
         <div>
           <strong>Marketing Reach</strong>
           <span id="marketingScore"></span>
         </div>
+
         <div>
           <strong>Competition</strong>
           <span id="competitionScore"></span>
@@ -73,13 +179,16 @@
       </div>
 
       <div class="ctaBox">
+        <p class="eyebrow lightEyebrow">Next Step</p>
+
         <h3>Want a second opinion before reducing your price?</h3>
+
         <p>
           Before making a price change, it may be worth understanding whether the real issue is price,
           presentation, marketing, buyer confidence or competition.
         </p>
 
-        <a class="primaryBtn ctaBtn" href="mailto:edita.andrijasevic@blockhousebay.rh.co.nz?subject=Seller%20Strategy%20Review%20Request">
+        <a class="primaryBtn ctaBtn" href="mailto:edita.andrijasevic@blockhousebay.rh.co.nz?subject=Seller%20Strategy%20Review%20Request&body=Hi%20Team%20Peter%20%26%20Edita%2C%0A%0AI%20completed%20the%20seller%20checker%20and%20would%20like%20a%20second%20opinion.%0A%0AProperty%20suburb%3A%0AProperty%20address%20or%20listing%20link%3A%0AMy%20main%20concern%3A%0A%0AThank%20you.">
           Request My Seller Strategy Review
         </a>
       </div>
@@ -88,25 +197,67 @@
     </section>
 
     <section class="info">
-      <h2>Why this matters</h2>
-      <p>
-        Most sellers assume low offers mean buyers are being unrealistic. Sometimes that is true.
-        But often buyers give signals before they ever write an offer — fewer second viewings,
-        vague feedback, hesitation around condition, concern about price, or comparing your home
-        against stronger alternatives.
-      </p>
+      <div class="twoColumn">
+        <div>
+          <p class="eyebrow">Why this matters</p>
 
-      <h2>Local seller help from Team Peter & Edita</h2>
+          <h2>Most sellers look at the price first. Buyers often hesitate for other reasons.</h2>
+
+          <p>
+            Low offers or quiet open homes do not always mean your property is a bad property.
+            Often buyers give warning signs before they write an offer — fewer second viewings,
+            vague feedback, concerns about condition, hesitation around documents, or comparing
+            your home against stronger alternatives.
+          </p>
+        </div>
+
+        <div class="quoteCard">
+          <p>
+            “The earlier you identify what buyers are reacting to, the more control you have before
+            momentum is lost.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <p class="eyebrow">Local seller help</p>
+
+      <h2>From online views to real buyer behaviour</h2>
+
       <p>
         We help Auckland homeowners understand how buyers are really responding to their property —
         not just through online views, but through enquiry quality, open home behaviour, buyer feedback,
         competing listings and offer patterns.
       </p>
 
+      <div class="serviceGrid">
+        <div>
+          <strong>Pricing strategy</strong>
+          <span>Compare your property against current buyer expectations.</span>
+        </div>
+
+        <div>
+          <strong>Presentation review</strong>
+          <span>Identify what buyers may notice before they make an offer.</span>
+        </div>
+
+        <div>
+          <strong>Marketing reach</strong>
+          <span>Check whether the right buyers are actually seeing your property.</span>
+        </div>
+
+        <div>
+          <strong>Buyer confidence</strong>
+          <span>Spot issues that may make buyers nervous or slow them down.</span>
+        </div>
+      </div>
+
       <p class="brand">
-        The A-Team (Peter & Edita) | Raine & Horne Titirangi, Blockhouse Bay & Lynfield
+        Team Peter & Edita | Raine & Horne Titirangi, Blockhouse Bay & Lynfield
       </p>
     </section>
+
   </main>
 
   <script src="script.js"></script>
