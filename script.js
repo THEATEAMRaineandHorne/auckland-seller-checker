@@ -80,7 +80,7 @@ const presaleQuestions = [
   {
     text: "How strong is your marketing plan before launching?",
     options: [
-      { label: "Strong plan with professional photos, video, floor plan and digital campaign", score: 0 },
+      { label: "Strong plan with photos, video, floor plan and digital campaign", score: 0 },
       { label: "Professional photos planned, but not much else yet", score: 2 },
       { label: "Mostly just standard property websites", score: 3 },
       { label: "No clear plan yet", score: 4 },
@@ -98,39 +98,6 @@ const presaleQuestions = [
       { label: "Not checked yet", score: 2 }
     ],
     categories: ["competition"]
-  },
-  {
-    text: "How flexible is your selling timeline?",
-    options: [
-      { label: "Very flexible", score: 0 },
-      { label: "Somewhat flexible", score: 1 },
-      { label: "Need to sell within a certain timeframe", score: 2 },
-      { label: "Under pressure to sell quickly", score: 4 },
-      { label: "Not sure yet", score: 1 }
-    ],
-    categories: ["price", "competition"]
-  },
-  {
-    text: "Are there any features buyers may object to?",
-    options: [
-      { label: "No obvious buyer objections", score: 0 },
-      { label: "Minor things, but nothing serious", score: 1 },
-      { label: "Some concerns such as parking, access, layout, privacy or noise", score: 3 },
-      { label: "Several things may reduce buyer confidence", score: 4 },
-      { label: "Not sure what buyers would object to", score: 3 }
-    ],
-    categories: ["presentation", "confidence"]
-  },
-  {
-    text: "Is the home easy for buyers to imagine living in?",
-    options: [
-      { label: "Yes, very easy", score: 0 },
-      { label: "Mostly", score: 1 },
-      { label: "Some rooms need work", score: 2 },
-      { label: "It feels cluttered, tired or hard to imagine", score: 4 },
-      { label: "Not sure yet", score: 2 }
-    ],
-    categories: ["presentation"]
   }
 ];
 
@@ -306,6 +273,7 @@ nextBtn.addEventListener("click", () => {
 
     if (selectedPath !== path) {
       path = selectedPath;
+
       activeQuestions = path === "presale"
         ? [journeyQuestion, ...presaleQuestions]
         : [journeyQuestion, ...listedQuestions];
@@ -402,7 +370,7 @@ function showResult() {
       text = "Your answers show possible risks around price, presentation, buyer confidence, marketing or competition. Addressing these before launch may help you avoid weak enquiry, low offers or early price pressure.";
     } else {
       title = "Your property likely needs a stronger launch strategy before listing.";
-      text = "If these issues are not addressed before going to market, buyers may hesitate quickly. A better launch plan may involve pricing evidence, presentation improvements, document preparation, objection handling and stronger buyer targeting.";
+      text = "If these issues are not addressed before going to market, buyers may hesitate quickly. A stronger launch plan may involve pricing evidence, presentation improvements, document preparation, objection handling and stronger buyer targeting.";
     }
   } else {
     if (riskPercent <= 0.25) {
