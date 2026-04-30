@@ -69,7 +69,7 @@
         <h2>Request my <span class="rh-gold">seller strategy</span> review</h2>
 
         <p>
-          Fill in what you can. You do not need to provide everything, but the more detail you include, the more useful the review can be.
+          Fill in what you can. The property address helps us review the right property and give you a more useful second opinion.
         </p>
       </div>
 
@@ -93,6 +93,16 @@
           <input type="email" name="email" required />
         </label>
 
+        <label>
+          Property address
+          <input type="text" name="property_address" placeholder="Please enter the property address so we can review the right property" required />
+        </label>
+
+        <label>
+          Listing link, if already online
+          <input type="text" name="listing_link" placeholder="Optional — paste the listing link if the property is already advertised" />
+        </label>
+
         <div class="formGrid">
           <label>
             Property suburb
@@ -112,11 +122,6 @@
             </select>
           </label>
         </div>
-
-        <label>
-          Property address or listing link
-          <input type="text" name="property_address_or_listing_link" placeholder="Optional, but helpful" />
-        </label>
 
         <label>
           What is your main concern?
