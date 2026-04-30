@@ -601,3 +601,71 @@ button,
     grid-template-columns: 1fr;
   }
 }
+.leadHero h1 {
+  max-width: 780px;
+}
+
+.leadForm {
+  position: relative;
+  z-index: 1;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.leadForm label {
+  display: block;
+  font-weight: 700;
+  color: #1c2432;
+  margin-bottom: 18px;
+}
+
+.leadForm input,
+.leadForm select,
+.leadForm textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(28, 36, 50, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  color: #1c2432;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  outline: none;
+}
+
+.leadForm input:focus,
+.leadForm select:focus,
+.leadForm textarea:focus {
+  border-color: rgba(176, 138, 66, 0.7);
+  box-shadow: 0 0 0 4px rgba(176, 138, 66, 0.12);
+}
+
+.checkboxLabel {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 600 !important;
+  color: #475467 !important;
+}
+
+.checkboxLabel input {
+  width: auto;
+  margin-top: 6px;
+}
+
+.leadSubmit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
