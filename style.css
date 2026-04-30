@@ -11,6 +11,7 @@
   --muted: #667085;
   --gold: #b08a42;
   --gold-dark: #8f6d2e;
+  --charcoal: #202632;
   --line: rgba(28, 36, 50, 0.08);
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
   --shadow-soft: 0 12px 35px rgba(17, 24, 39, 0.08);
@@ -106,16 +107,23 @@ body {
 }
 
 .hero {
-  padding: 60px 42px;
+  padding: 54px 42px;
   border-radius: 32px;
   margin-bottom: 26px;
 }
 
 .heroGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
-  gap: 32px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1.75fr) minmax(230px, 0.45fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.leadHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+  gap: 28px;
+  align-items: stretch;
 }
 
 .heroContent,
@@ -126,7 +134,9 @@ body {
 .scoreGrid,
 .ctaBox,
 .twoColumn,
-.serviceGrid {
+.serviceGrid,
+.leadForm,
+.heroPhotoCard {
   position: relative;
   z-index: 1;
 }
@@ -148,11 +158,11 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(32px, 4.8vw, 52px);
   line-height: 1.02;
-  letter-spacing: -1.6px;
+  letter-spacing: -1.2px;
   margin: 0 0 20px;
-  max-width: 860px;
+  max-width: 760px;
 }
 
 h2 {
@@ -165,6 +175,14 @@ h3 {
   font-size: clamp(24px, 3vw, 30px);
   line-height: 1.15;
   margin-top: 0;
+}
+
+.rh-gold {
+  color: var(--gold-dark);
+}
+
+.rh-charcoal {
+  color: var(--charcoal);
 }
 
 .intro {
@@ -192,8 +210,15 @@ h3 {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 244, 236, 0.96) 100%);
   border: 1px solid rgba(176, 138, 66, 0.18);
   border-radius: 26px;
-  padding: 26px;
+  padding: 24px;
   box-shadow: var(--shadow-soft);
+}
+
+.simpleHeroCard {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .cardLabel {
@@ -203,73 +228,27 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1.2px;
   font-size: 12px;
-}
-
-.heroList {
-  list-style: none;
-  padding: 0;
-  margin: 18px 0 24px;
-}
-
-.heroList li {
-  padding: 12px 0 12px 30px;
-  border-bottom: 1px solid rgba(28, 36, 50, 0.08);
-  position: relative;
-}
-
-.heroList li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--gold-dark);
-  font-weight: 900;
+  margin-bottom: 14px;
 }
 
 .miniProof {
   background: #172033;
   color: #ffffff;
   border-radius: 18px;
-  padding: 16px;
+  padding: 18px;
 }
 
 .miniProof strong {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .miniProof span {
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 14px;
-}
-
-.featureStrip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 24px;
-}
-
-.featureStrip div,
-.serviceGrid div,
-.quoteCard {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(28, 36, 50, 0.08);
-  border-radius: 22px;
-  padding: 20px;
-  box-shadow: var(--shadow-soft);
-}
-
-.featureStrip strong,
-.serviceGrid strong {
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  margin-bottom: 4px;
-}
-
-.featureStrip span,
-.serviceGrid span {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.80);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .checker,
@@ -404,6 +383,19 @@ button,
   background: #ffffff;
 }
 
+.greenBtn {
+  background: linear-gradient(135deg, #2f8f45 0%, #1f6d33 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 12px 24px rgba(31, 109, 51, 0.24);
+}
+
+.greenBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(31, 109, 51, 0.28);
+  background: linear-gradient(135deg, #34994b 0%, #215f31 100%);
+}
+
 .hidden {
   display: none;
 }
@@ -505,6 +497,15 @@ button,
   align-items: center;
 }
 
+.quoteCard,
+.serviceGrid div {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(28, 36, 50, 0.08);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
 .quoteCard p {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 24px;
@@ -520,91 +521,50 @@ button,
   margin: 26px 0 10px;
 }
 
-@media (max-width: 980px) {
-  .scoreGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.serviceGrid strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  margin-bottom: 4px;
 }
 
-@media (max-width: 900px) {
-  .heroGrid,
-  .twoColumn {
-    grid-template-columns: 1fr;
-  }
-
-  .serviceGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .featureStrip {
-    grid-template-columns: 1fr;
-  }
+.serviceGrid span {
+  color: var(--muted);
 }
 
-@media (max-width: 760px) {
-  body {
-    background:
-      linear-gradient(rgba(18, 24, 34, 0.62), rgba(18, 24, 34, 0.56)),
-      url("images/background.jpg") center center / cover no-repeat scroll;
-  }
-
-  .page {
-    padding: 18px 14px 50px;
-  }
-
-  .hero {
-    padding: 34px 22px;
-    border-radius: 24px;
-  }
-
-  .checker,
-  .resultBox,
-  .info {
-    padding: 22px;
-    border-radius: 22px;
-  }
-
-  .scoreGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .navButtons {
-    flex-direction: column;
-  }
-
-  button,
-  .ctaBtn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .intro {
-    font-size: 18px;
-  }
+/* Lead page photo panel */
+.heroPhotoCard {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 244, 236, 0.96) 100%);
+  border: 1px solid rgba(176, 138, 66, 0.18);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 600px) {
-  .topBar {
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .headerLink {
-    display: none;
-  }
-
-  .heroActions {
-    flex-direction: column;
-  }
-
-  .serviceGrid {
-    grid-template-columns: 1fr;
-  }
-}
-.leadHero h1 {
-  max-width: 780px;
+.heroPhoto {
+  min-height: 280px;
+  background:
+    linear-gradient(rgba(20, 26, 36, 0.16), rgba(20, 26, 36, 0.16)),
+    url("images/background.jpg") center center / cover no-repeat;
 }
 
+.photoInfo {
+  padding: 22px;
+}
+
+.photoInfo h2 {
+  font-size: clamp(26px, 3vw, 34px);
+  margin-bottom: 10px;
+}
+
+.photoInfo p {
+  color: #475467;
+  margin: 0;
+}
+
+/* Lead form */
 .leadForm {
   position: relative;
   z-index: 1;
@@ -663,9 +623,90 @@ button,
   margin-top: 8px;
 }
 
+@media (max-width: 980px) {
+  .scoreGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroGrid,
+  .twoColumn,
+  .leadHeroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 760px) {
+  body {
+    background:
+      linear-gradient(rgba(18, 24, 34, 0.62), rgba(18, 24, 34, 0.56)),
+      url("images/background.jpg") center center / cover no-repeat scroll;
+  }
+
+  .page {
+    padding: 18px 14px 50px;
+  }
+
+  .hero {
+    padding: 34px 22px;
+    border-radius: 24px;
+  }
+
+  .checker,
+  .resultBox,
+  .info {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .scoreGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .navButtons {
+    flex-direction: column;
+  }
+
+  button,
+  .ctaBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+  }
+
   .formGrid {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .heroPhoto {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topBar {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .headerLink {
+    display: none;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
   }
 }
