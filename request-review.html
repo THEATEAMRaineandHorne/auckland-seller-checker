@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Request a Seller Strategy Review | Auckland Seller Checker</title>
+
+  <meta name="description" content="Request a confidential seller strategy review for your Auckland property. Share your situation and get a practical second opinion before reducing your price or launching to market.">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="page">
+
+    <header class="topBar">
+      <div class="logoText">
+        <span class="logoSmall">Confidential Seller Review</span>
+        <strong>Auckland Seller Checker</strong>
+      </div>
+
+      <a class="headerLink" href="index.html">
+        Back to Checker
+      </a>
+    </header>
+
+    <section class="hero leadHero">
+      <div class="heroGrid">
+        <div class="heroContent">
+          <p class="eyebrow">Request Your Review</p>
+
+          <h1>Get a practical second opinion before your next move.</h1>
+
+          <p class="intro">
+            Tell us a little about your property and what is happening. We will look at your situation and help you understand whether the issue may be price, presentation, marketing, buyer confidence or competition.
+          </p>
+
+          <p class="trust">
+            This is useful before reducing your price, changing strategy, relaunching your property or going live for the first time.
+          </p>
+        </div>
+
+        <aside class="heroCard simpleHeroCard">
+          <p class="cardLabel">What we look at</p>
+
+          <div class="miniProof">
+            <strong>Seller strategy</strong>
+            <span>Pricing • Presentation • Buyer feedback • Marketing reach • Buyer confidence</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="checker">
+      <div class="sectionIntro">
+        <p class="eyebrow">Your Details</p>
+
+        <h2>Request My Seller Strategy Review</h2>
+
+        <p>
+          Fill in what you can. You do not need to provide everything, but the more detail you include, the more useful the review can be.
+        </p>
+      </div>
+
+      <form class="leadForm" action="https://formspree.io/f/mdabnpgl" method="POST">
+        <input type="hidden" name="_subject" value="New Auckland Seller Checker Lead" />
+
+        <div class="formGrid">
+          <label>
+            First name
+            <input type="text" name="first_name" required />
+          </label>
+
+          <label>
+            Phone number
+            <input type="tel" name="phone" />
+          </label>
+        </div>
+
+        <label>
+          Email address
+          <input type="email" name="email" required />
+        </label>
+
+        <div class="formGrid">
+          <label>
+            Property suburb
+            <input type="text" name="property_suburb" placeholder="Example: Titirangi, Blockhouse Bay, Lynfield" />
+          </label>
+
+          <label>
+            Selling stage
+            <select name="selling_stage">
+              <option value="">Please choose</option>
+              <option>Thinking of selling, not listed yet</option>
+              <option>Preparing to list soon</option>
+              <option>Already listed, low enquiry</option>
+              <option>Getting viewings, no offers</option>
+              <option>Getting offers, but too low</option>
+              <option>Need a second opinion</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Property address or listing link
+          <input type="text" name="property_address_or_listing_link" placeholder="Optional, but helpful" />
+        </label>
+
+        <label>
+          What is your main concern?
+          <select name="main_concern">
+            <option value="">Please choose</option>
+            <option>Price may be too high</option>
+            <option>Not enough buyer enquiry</option>
+            <option>Viewings but no offers</option>
+            <option>Offers are too low</option>
+            <option>Property presentation</option>
+            <option>Marketing is not strong enough</option>
+            <option>Buyer confidence issues</option>
+            <option>Not sure</option>
+          </select>
+        </label>
+
+        <label>
+          Tell us what is happening
+          <textarea name="message" rows="6" placeholder="Example: We have been listed for 5 weeks, had 8 groups through, but no offers yet..."></textarea>
+        </label>
+
+        <label class="checkboxLabel">
+          <input type="checkbox" name="permission_to_contact" required />
+          I agree to be contacted about my seller strategy review.
+        </label>
+
+        <button class="primaryBtn leadSubmit" type="submit">
+          Send My Review Request
+        </button>
+      </form>
+    </section>
+
+    <section class="info">
+      <p class="brand">
+        Auckland Seller Checker is provided by THE A-TEAM, licensed real estate salespeople with Raine & Horne, helping homeowners improve their selling strategy, attract stronger buyer competition, and work toward the best possible selling result through smart pricing, presentation, negotiation and AI-enhanced marketing.
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>
