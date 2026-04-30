@@ -26,7 +26,7 @@
     </header>
 
     <section class="hero leadHero">
-      <div class="heroGrid">
+      <div class="leadHeroGrid">
         <div class="heroContent">
           <p class="eyebrow">Request Your Review</p>
 
@@ -37,26 +37,36 @@
           </p>
 
           <p class="trust">
-            This is useful before reducing your price, changing strategy, relaunching your property or going live for the first time.
+            This is especially useful before reducing your price, changing strategy, relaunching your property or going live for the first time.
           </p>
+
+          <div class="heroActions">
+            <a class="primaryBtn ctaBtn" href="#review-form">Request My Review</a>
+            <a class="secondaryBtn ctaBtn" href="index.html">Back to Seller Checker</a>
+          </div>
         </div>
 
-        <aside class="heroCard simpleHeroCard">
-          <p class="cardLabel">What we look at</p>
+        <aside class="heroPhotoCard">
+          <div class="heroPhoto"></div>
 
-          <div class="miniProof">
-            <strong>Seller strategy</strong>
-            <span>Pricing • Presentation • Buyer feedback • Marketing reach • Buyer confidence</span>
+          <div class="photoInfo">
+            <p class="cardLabel">Seller Strategy Review</p>
+
+            <h2>Designed to give you a <span class="rh-gold">clearer next step</span></h2>
+
+            <p>
+              A practical review of price position, presentation, marketing strength, buyer confidence and competition.
+            </p>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="checker">
+    <section id="review-form" class="checker">
       <div class="sectionIntro">
         <p class="eyebrow">Your Details</p>
 
-        <h2>Request My Seller Strategy Review</h2>
+        <h2>Request my <span class="rh-gold">seller strategy</span> review</h2>
 
         <p>
           Fill in what you can. You do not need to provide everything, but the more detail you include, the more useful the review can be.
@@ -91,7 +101,7 @@
 
           <label>
             Selling stage
-            <select name="selling_stage">
+            <select name="selling_stage" required>
               <option value="">Please choose</option>
               <option>Thinking of selling, not listed yet</option>
               <option>Preparing to list soon</option>
@@ -110,7 +120,7 @@
 
         <label>
           What is your main concern?
-          <select name="main_concern">
+          <select name="main_concern" required>
             <option value="">Please choose</option>
             <option>Price may be too high</option>
             <option>Not enough buyer enquiry</option>
@@ -137,6 +147,26 @@
           Send My Review Request
         </button>
       </form>
+    </section>
+
+    <section class="info">
+      <div class="twoColumn">
+        <div>
+          <p class="eyebrow">Why request a review</p>
+
+          <h2>Sometimes the issue is not just <span class="rh-gold">price</span> — it is the <span class="rh-charcoal">full strategy</span></h2>
+
+          <p>
+            Sellers often assume the answer is to reduce the price straight away. In reality, buyer hesitation can also come from presentation, weak positioning, confidence issues, poor follow-up or stronger nearby competition.
+          </p>
+        </div>
+
+        <div class="quoteCard">
+          <p>
+            “A smart second opinion can help you decide whether to change price, change strategy, or improve how the property is being presented to the market.”
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="info">
