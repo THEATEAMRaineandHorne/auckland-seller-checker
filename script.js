@@ -391,33 +391,24 @@ function showResult() {
   document.getElementById("resultTitle").textContent = title;
   document.getElementById("resultText").textContent = text;
 
-  document.getElementById("priceScore").textContent = getRiskLabel(scores.price, maxScores.price);
-  document.getElementById("presentationScore").textContent = getRiskLabel(scores.presentation, maxScores.presentation);
-  document.getElementById("confidenceScore").textContent = getRiskLabel(scores.confidence, maxScores.confidence);
-  document.getElementById("marketingScore").textContent = getRiskLabel(scores.marketing, maxScores.marketing);
-  document.getElementById("competitionScore").textContent = getRiskLabel(scores.competition, maxScores.competition);
+  document.getElementById("priceScore").textContent = getRiskPercent(scores.price, maxScores.price);
+  document.getElementById("presentationScore").textContent = getRiskPercent(scores.presentation, maxScores.presentation);
+  document.getElementById("confidenceScore").textContent = getRiskPercent(scores.confidence, maxScores.confidence);
+  document.getElementById("marketingScore").textContent = getRiskPercent(scores.marketing, maxScores.marketing);
+  document.getElementById("competitionScore").textContent = getRiskPercent(scores.competition, maxScores.competition);
 
   document.querySelector(".checker").classList.add("hidden");
   resultBox.classList.remove("hidden");
   resultBox.scrollIntoView({ behavior: "smooth" });
 }
 
-function getRiskLabel(score, maxScore) {
+function getRiskPercent(score, maxScore) {
   if (maxScore === 0) {
-    return "Low";
+    return "0%";
   }
 
-  const percentage = score / maxScore;
-
-  if (percentage <= 0.25) {
-    return "Low";
-  }
-
-  if (percentage <= 0.6) {
-    return "Medium";
-  }
-
-  return "High";
+  const percentage = Math.round((score / maxScore) * 100);
+  return `${percentage}%`;
 }
 
 renderQuestion();
