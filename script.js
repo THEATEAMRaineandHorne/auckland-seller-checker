@@ -89,6 +89,17 @@ const presaleQuestions = [
     categories: ["marketing"]
   },
   {
+    text: "Is your marketing plan designed to attract qualified buyers, not just online views?",
+    options: [
+      { label: "Yes, it includes AI-enhanced targeting and a clear buyer strategy", score: 0 },
+      { label: "Some digital marketing is planned, but I am not sure how targeted it is", score: 2 },
+      { label: "Mostly standard property websites only", score: 3 },
+      { label: "No clear plan yet", score: 4 },
+      { label: "I am not sure what AI-enhanced marketing should include", score: 3 }
+    ],
+    categories: ["marketing"]
+  },
+  {
     text: "How much similar competition is currently nearby?",
     options: [
       { label: "Very little similar competition", score: 0 },
@@ -220,6 +231,17 @@ const listedQuestions = [
       { label: "Mostly property portals only", score: 3 },
       { label: "Not sure", score: 3 },
       { label: "No", score: 4 }
+    ],
+    categories: ["marketing"]
+  },
+  {
+    text: "Do you know if your current campaign is using AI-enhanced marketing to find buyers who are ready, able and motivated?",
+    options: [
+      { label: "Yes, the campaign is actively targeting likely buyers", score: 0 },
+      { label: "Some digital marketing is being used, but I am not sure how targeted it is", score: 2 },
+      { label: "Mostly just standard websites and social posts", score: 3 },
+      { label: "No, I do not think AI-enhanced targeting is being used", score: 4 },
+      { label: "I am not sure", score: 3 }
     ],
     categories: ["marketing"]
   }
